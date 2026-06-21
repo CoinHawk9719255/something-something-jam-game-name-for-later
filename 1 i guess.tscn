@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://v17pwr3x77pq"]
 
+[ext_resource type="Texture2D" uid="uid://1moy2ulhw7hx" path="res://Screenshot 2024-05-16 180024.png" id="1_gm6nr"]
 [ext_resource type="PackedScene" uid="uid://dalecf1u7rojf" path="res://2 i guess.tscn" id="1_w6gwg"]
 
 [node name="Node2D" type="Node2D" unique_id=632110091]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1971584373]
+position = Vector2(628, 334)
+texture = ExtResource("1_gm6nr")
 
 [node name="godot icon i guess" parent="." unique_id=1544273406 instance=ExtResource("1_w6gwg")]
