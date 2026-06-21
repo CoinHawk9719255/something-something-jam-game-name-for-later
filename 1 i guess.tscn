@@ -6,7 +6,8 @@
 [node name="Node2D" type="Node2D" unique_id=632110091]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1971584373]
-position = Vector2(628, 334)
+position = Vector2(1292, 800.25)
+scale = Vector2(1.4707233, 1.8149606)
 texture = ExtResource("1_gm6nr")
 
 [node name="godot icon i guess" parent="." unique_id=1544273406 instance=ExtResource("1_w6gwg")]
