@@ -6,6 +6,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3gu4"]
 size = Vector2(126, 126)
 
+[sub_resource type="GDScript" id="GDScript_dpar4"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="plane" type="Node2D" unique_id=1544273406]
 
 [node name="plane" type="RigidBody2D" parent="." unique_id=1421142271]
@@ -23,3 +36,11 @@ texture = ExtResource("2_r8n13")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plane" unique_id=818023828]
 position = Vector2(191, 196)
 shape = SubResource("RectangleShape2D_c3gu4")
+
+[node name="roll_cooldown" type="Timer" parent="plane" unique_id=1184172031]
+process_callback = 0
+wait_time = 2.5
+one_shot = true
+script = SubResource("GDScript_dpar4")
+
+[connection signal="timeout" from="plane/roll_cooldown" to="plane" method="_on_roll_cooldown_timeout"]
