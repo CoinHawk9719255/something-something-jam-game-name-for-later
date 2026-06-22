@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3gu4"]
 size = Vector2(126, 126)
 
-[node name="Node2D" type="Node2D" unique_id=1544273406]
+[node name="plane" type="Node2D" unique_id=1544273406]
 
 [node name="plane" type="RigidBody2D" parent="." unique_id=1421142271]
 gravity_scale = 0.0
