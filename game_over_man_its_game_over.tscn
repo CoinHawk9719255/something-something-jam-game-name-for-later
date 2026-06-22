@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://djjg6ofl3mejo"]
+
+[ext_resource type="Texture2D" uid="uid://bqgpb3v1a4hot" path="res://dafrtedsa.png" id="1_rgh56"]
+
+[node name="game_over_man_ITS_GAME_OVER" type="Node2D" unique_id=838419312]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=812477480]
+position = Vector2(1280, 800)
+texture = ExtResource("1_rgh56")

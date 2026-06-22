@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brm68ft5r1c6l"]
+
+[ext_resource type="Script" uid="uid://df78ev4btlfam" path="res://collision_shape_2d.gd" id="1_wf6f0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d2km0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nlc30"]
+distance = -1582.0
+
+[node name="lowerboundcollisionwall" type="Node2D" unique_id=1284379641]
+
+[node name="lower_bound" type="RigidBody2D" parent="." unique_id=566377488]
+collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_d2km0")
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+freeze = true
+script = ExtResource("1_wf6f0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lower_bound" unique_id=950491689]
+shape = SubResource("WorldBoundaryShape2D_nlc30")
+
+[node name="Sprite2D" type="Sprite2D" parent="lower_bound" unique_id=1282776614]
