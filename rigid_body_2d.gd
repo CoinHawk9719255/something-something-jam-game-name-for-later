@@ -32,7 +32,7 @@ func barrel_roll():
 			apply_central_impulse(Vector2(0,-200))
 			$roll_cooldown.start()
 			await get_tree().create_timer(1.25).timeout
-			apply_central_impulse(Vector2(0,400))
+			apply_central_impulse(Vector2(0,200))
 		else:
 			pass
 	
