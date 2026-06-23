@@ -3,7 +3,7 @@ extends RigidBody2D
 @onready var target = get_node("../lowerboundcollisionwall/lower_bound") 
 var speed = 10.0
 var roll = false
-func _physics_process(delta):
+func _physics_process(_delta):
 	barrel_roll()
 	var input = Input.get_axis("up", "down")
 	if input != 0.0:
@@ -32,7 +32,7 @@ func barrel_roll():
 			apply_central_impulse(Vector2(0,-200))
 			$roll_cooldown.start()
 			await get_tree().create_timer(1.25).timeout
-			apply_central_impulse(Vector2(0,220))
+			apply_central_impulse(Vector2(0,280))
 		else:
 			pass
 	
@@ -40,3 +40,13 @@ func barrel_roll():
 
 func _on_roll_cooldown_timeout() -> void:
 	roll = true
+
+
+#shooting shooting pew pew
+func shoot_bullet():
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		pass
+
+func createBullet():
+	
+	pass
