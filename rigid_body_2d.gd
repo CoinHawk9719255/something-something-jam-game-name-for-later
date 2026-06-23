@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @onready var projectile := preload("res://bullet.tscn")
 @onready var target = get_node("../lowerboundcollisionwall/lower_bound") 
-
+@onready var pressedButton = false
 #@onready var bullet = get_node("../bullet_projectile").instantiate()
 @onready var bullet2new = projectile.instantiate()
 var speed = 10.0
@@ -53,14 +53,14 @@ func _on_roll_cooldown_timeout() -> void:
 
 #shooting shooting pew pew
 func shoot_bullet():
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if not pressedButton and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		createBullet()
-		
+		print("Hallo")
+		pressedButton = true
 		pass
+	elif not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		pressedButton = false
 
 func createBullet():
-	
 	add_child(bullet2new)
-	
-	
 	pass
