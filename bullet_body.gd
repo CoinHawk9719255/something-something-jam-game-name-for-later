@@ -1,5 +1,5 @@
 extends RigidBody2D
-@export var bullet_scene: PackedScene = preload("res://bullet.tscn")
+@export var bullet_projectile: PackedScene = preload("res://bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

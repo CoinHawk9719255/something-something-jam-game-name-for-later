@@ -9,17 +9,17 @@ height = 16.0
 
 [node name="bullet" type="Node2D" unique_id=1276570752]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1886794811]
+[node name="bullet_projectile" type="RigidBody2D" parent="." unique_id=1886794811]
 collision_layer = 2
 collision_mask = 4
 mass = 0.02
 gravity_scale = 0.01
 script = ExtResource("1_v8qja")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=904662850]
+[node name="Sprite2D" type="Sprite2D" parent="bullet_projectile" unique_id=904662850]
 texture = ExtResource("1_v7oki")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=802963853]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_projectile" unique_id=802963853]
 position = Vector2(0, 0.5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_v8qja")
