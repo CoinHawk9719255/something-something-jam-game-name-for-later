@@ -30,11 +30,11 @@ constant_force = Vector2(0, 9.8)
 script = ExtResource("2_1xtw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="plane" unique_id=497130503]
-position = Vector2(2, -1)
+position = Vector2(191, 197)
 texture = ExtResource("2_r8n13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plane" unique_id=818023828]
-position = Vector2(1, -1)
+position = Vector2(191, 196)
 shape = SubResource("RectangleShape2D_c3gu4")
 
 [node name="roll_cooldown" type="Timer" parent="plane" unique_id=1184172031]
