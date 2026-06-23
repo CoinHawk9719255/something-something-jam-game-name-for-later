@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dqfrykx6ls5x8"]
+
+[ext_resource type="Script" uid="uid://df78ev4btlfam" path="res://collision_shape_2d.gd" id="1_wse3g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_whjiw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k4uqu"]
+normal = Vector2(0, 1)
+distance = 2.0327165
+
+[node name="rightboundcollisionwall" type="Node2D" unique_id=1074938235]
+
+[node name="right_bound" type="RigidBody2D" parent="." unique_id=1580015115]
+position = Vector2(136, 4)
+collision_layer = 223
+collision_mask = 223
+physics_material_override = SubResource("PhysicsMaterial_whjiw")
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+freeze = true
+script = ExtResource("1_wse3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_bound" unique_id=337258830]
+position = Vector2(2559, 862)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_k4uqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="right_bound" unique_id=1345800608]
+position = Vector2(2558, 861)
