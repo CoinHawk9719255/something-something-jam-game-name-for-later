@@ -1,15 +1,20 @@
 extends RigidBody2D
 @export var bullet_projectile: PackedScene = preload("res://bullet.tscn")
-
-# Called when the node enters the scene tree for the first time.
+@export var fromMi = false
+@export var fromEneMi = false
 func _ready() -> void:
-	pass # Replace with function body.
-	linear_velocity = Vector2(100, 0)  # set initial velocity
+
+	apply_central_impulse(Vector2(940,0))
+	await get_tree().create_timer(5.0).timeout
+	queue_free()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta: float) -> void:
 	pass
-
-func apply_force_example():
-	apply_central_impulse(Vector2(0, -300))  # e.g. a jump/punch
+	
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	print("DIDDY DELETE")
+	queue_free()
+	
+	

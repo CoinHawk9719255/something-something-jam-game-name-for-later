@@ -2,12 +2,15 @@ extends RigidBody2D
 
 @onready var projectile := preload("res://bullet.tscn")
 @onready var target = get_node("../lowerboundcollisionwall/lower_bound")
+@onready var fire_rate = 0.05
+@onready var pressedButton = false
+@onready var speed = 10.0
+@onready var roll = false
+@onready var time_since_shot = fire_rate
+@onready var ammo = 300
 
-var pressedButton = false
-var speed = 10.0
-var roll = false
-
-func _physics_process(_delta):
+func _physics_process(delta):
+	time_since_shot += delta
 	shoot_bullet()
 	barrel_roll()
 	var input = Input.get_axis("up", "down")
@@ -43,14 +46,23 @@ func _on_roll_cooldown_timeout() -> void:
 
 #shooting shooting pew pew
 func shoot_bullet():
-	if not pressedButton and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		createBullet()
-		print("Hallo")
-		pressedButton = true
-	elif not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		pressedButton = false
+	
+	#if not pressedButton and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		
+		if time_since_shot >= fire_rate &&  ammo > 0:
+			time_since_shot = 0.0
+			ammo -= 1
+			createBullet()
+			print("Hallo")
+			
+	#pressedButton = true
+	#elif not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	#pressedButton = false
+		
 
 func createBullet():
-	var newBullet = projectile.instantiate()  # NEW instance every shot
+	var newBullet = projectile.instantiate()  
 	get_tree().current_scene.add_child(newBullet)
-	newBullet.global_position = global_position  # spawn at the gun's position
+	newBullet.global_position = global_position  

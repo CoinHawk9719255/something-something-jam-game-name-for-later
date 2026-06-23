@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://1moy2ulhw7hx" path="res://Screenshot 2024-05-16 180024.png" id="1_gm6nr"]
 [ext_resource type="PackedScene" uid="uid://dalecf1u7rojf" path="res://plane.tscn" id="1_w6gwg"]
-[ext_resource type="PackedScene" uid="uid://doa2alabvcmel" path="res://bullet.tscn" id="2_lnvjd"]
 [ext_resource type="PackedScene" uid="uid://brm68ft5r1c6l" path="res://lowerboundcollisionwall.tscn" id="3_x3p6a"]
 
 [node name="Node2D" type="Node2D" unique_id=632110091]
@@ -11,8 +10,6 @@
 position = Vector2(1279.5001, 800.25)
 scale = Vector2(1.4712974, 1.8149606)
 texture = ExtResource("1_gm6nr")
-
-[node name="bullet" parent="." unique_id=1276570752 instance=ExtResource("2_lnvjd")]
 
 [node name="plane" parent="." unique_id=1544273406 instance=ExtResource("1_w6gwg")]
 position = Vector2(631, 725)

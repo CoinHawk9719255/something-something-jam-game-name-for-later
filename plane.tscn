@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1w78jkc8f6wv" path="res://plane.png" id="2_r8n13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3gu4"]
-size = Vector2(126, 126)
+size = Vector2(128, 128)
 
 [sub_resource type="GDScript" id="GDScript_dpar4"]
 script/source = "extends Timer
@@ -30,11 +30,9 @@ constant_force = Vector2(0, 9.8)
 script = ExtResource("2_1xtw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="plane" unique_id=497130503]
-position = Vector2(2, -1)
 texture = ExtResource("2_r8n13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plane" unique_id=818023828]
-position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_c3gu4")
 
 [node name="roll_cooldown" type="Timer" parent="plane" unique_id=1184172031]
