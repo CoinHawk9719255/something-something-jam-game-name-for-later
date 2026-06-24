@@ -7,7 +7,7 @@ extends RigidBody2D
 @onready var speed = 10.0
 @onready var roll = false
 @onready var time_since_shot = fire_rate
-@export var ammo = 300
+@export var ammo = 500
 @onready var wepFuel = 300
 @onready var can_kamikaze = false
 @onready var canControl_plane = true
@@ -37,7 +37,7 @@ func wep():
 		
 			if Input.is_action_pressed("space"):
 				if my_position < 631:
-					if wepFuel > 10:
+					if wepFuel > 0:
 						#print("wepping")
 						apply_central_impulse(Vector2(1, 0))
 						wepFuel -= 1
