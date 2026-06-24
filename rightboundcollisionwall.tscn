@@ -6,7 +6,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k4uqu"]
 normal = Vector2(0, 1)
-distance = 2.0327165
+distance = 133.0
 
 [node name="rightboundcollisionwall" type="Node2D" unique_id=1074938235]
 

@@ -69,10 +69,10 @@ func calculateUpDown():
 		time_since_last_move = 0
 		
 		if player_plane_y < enemy_plane_y:
-			random_speed = -400 #randi_range(100, 400)
+			random_speed = randi_range(-100, -400)
 		
 		elif player_plane_y > enemy_plane_y:
-			random_speed = 400 #randi_range(-100, -400)
+			random_speed = randi_range(100, 400)
 			
 		else:
 			random_speed = randi_range(-300, 300)
@@ -94,5 +94,6 @@ func createBullet():
 
 
 func _on_body_entered(body: Node2D) -> void:
+	print("touched:"+ body.name)
 	if body.name == "right_bound":
 		get_tree().change_scene_to_file("res://win.tscn")

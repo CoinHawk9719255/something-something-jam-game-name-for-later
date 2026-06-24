@@ -6,3 +6,4 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987892000]
 texture = ExtResource("1_wao2c")
+offset = Vector2(1280, 800)
