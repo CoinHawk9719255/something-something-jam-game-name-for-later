@@ -7,7 +7,7 @@ extends RigidBody2D
 @onready var speed = 10.0
 @onready var roll = false
 @onready var time_since_shot = fire_rate
-@export var ammo = 3
+@export var ammo = 300
 @onready var wepFuel = 300
 @onready var can_kamikaze = false
 @onready var canControl_plane = true
