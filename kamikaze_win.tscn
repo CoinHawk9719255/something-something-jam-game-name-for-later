@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://byuuro36klr4a"]
+
+[ext_resource type="FontFile" uid="uid://b2qkup31wes5t" path="res://Qindret-OGxxP.otf" id="1_7fhhb"]
+[ext_resource type="Texture2D" uid="uid://4nm5kif1qy3h" path="res://gloragsyh tokampen.png" id="1_evdyi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_evdyi"]
+line_spacing = 0.0
+font = ExtResource("1_7fhhb")
+font_size = 250
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+outline_color = Color(0.91587794, 0.0663015, 0, 1)
+shadow_size = 50
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="kamikazeWin" type="Node2D" unique_id=686740749]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1771527886]
+position = Vector2(1277.5, 799.50006)
+scale = Vector2(1.4849362, 1.3258708)
+texture = ExtResource("1_evdyi")
+
+[node name="Control" type="Control" parent="." unique_id=1527415220]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=428226422]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 617.0
+offset_right = 4037.0
+offset_bottom = 1944.0
+text = "日本帝国に栄光あれ！"
+label_settings = SubResource("LabelSettings_evdyi")

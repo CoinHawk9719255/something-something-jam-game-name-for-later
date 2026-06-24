@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://blqhk12jnlhm" path="res://rigid_body_2d.gd" id="2_1xtw7"]
 [ext_resource type="Texture2D" uid="uid://b1w78jkc8f6wv" path="res://plane.png" id="2_r8n13"]
-[ext_resource type="AudioStream" uid="uid://di3k7fe5a4tj3" path="res://banzai.mp3" id="3_6xwvw"]
 [ext_resource type="Script" uid="uid://csiaj62cjgyr3" path="res://audio_stream_player.gd" id="3_nqs3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3gu4"]
@@ -46,8 +45,6 @@ one_shot = true
 script = SubResource("GDScript_dpar4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="plane" unique_id=265302092]
-stream = ExtResource("3_6xwvw")
-volume_db = 13.065
 script = ExtResource("3_nqs3l")
 
 [connection signal="timeout" from="plane/roll_cooldown" to="plane" method="_on_roll_cooldown_timeout"]

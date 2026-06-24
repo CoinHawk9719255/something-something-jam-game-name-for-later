@@ -11,7 +11,7 @@ extends RigidBody2D
 @onready var wepFuel = 300
 @onready var can_kamikaze = false
 @onready var canControl_plane = true
-@onready var kamikazing = false
+@export var kamikazing = false
 @export var player_plane_y = 0
 @export var player_plane_x = 0
 @onready var health = 100
@@ -76,7 +76,7 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 	
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:	
 	if body.name == "lower_bound":
 		print("touched: " + body.name)
 		get_tree().change_scene_to_file("res://game_over_man_its_game_over.tscn")
