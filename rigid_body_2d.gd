@@ -7,7 +7,7 @@ extends RigidBody2D
 @onready var speed = 10.0
 @onready var roll = false
 @onready var time_since_shot = fire_rate
-@export var ammo = 500
+@export var ammo = 3
 @onready var wepFuel = 300
 @onready var can_kamikaze = false
 @onready var canControl_plane = true
@@ -69,6 +69,7 @@ func kamikaze():
 			kamikazing = true
 			speed = 5
 	if kamikazing == true:
+		await get_tree().create_timer(1.5).timeout
 		apply_central_impulse(Vector2(100, 0))
 	
 func _ready():

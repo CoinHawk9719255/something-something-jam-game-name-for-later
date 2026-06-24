@@ -6,7 +6,7 @@ extends RigidBody2D
 @onready var moveThingyMagigy = 3
 @onready var target: Node2D = null
 @onready var view_distance = 3000
-@onready var fov_degrees = 12
+@onready var fov_degrees = 13
 @onready var time_since_shot = 0
 @onready var fire_rate = 0.03
 @onready var enemy_plane_y = 0
@@ -15,17 +15,22 @@ extends RigidBody2D
 @onready var player_plane_x = plane.player_plane_x
 @onready var player_plane_y = plane.player_plane_y
 @onready var feeling_shot = false
-@onready var enemy_ammo = 150
+@onready var enemy_ammo = 250
 @onready var reloading = true
 @onready var hitByKamikaze = false
+@onready var fuel = 30000
+
 func _ready() -> void:
 	$move_cooldown.start()
 	#await get_trwee().create_timer(0.15).timeout
 	random_speed = randi_range(-600, 600)
 	apply_central_impulse(Vector2(0, random_speed)*3)
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(delta: float) -> void:
+
+	
+	dodgeKamikaze()
 	reload()
 	time_since_shot += delta
 	enemy_plane_x = global_position.x
@@ -67,7 +72,13 @@ func can_see_target() -> bool:
 	if result.is_empty():
 		return false
 	return result.collider == target
-	
+
+func dodgeKamikaze(): 
+	if plane.kamikazing == true:
+		await get_tree().create_timer(1.25).timeout
+		print('dodge')
+		apply_central_impulse(Vector2(0,randi_range(-200, 200)))
+
 func calculateUpDown():
 	if time_since_last_move >= moveThingyMagigy:
 		time_since_last_move = 0
@@ -119,12 +130,17 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "bullet_projectile":
 		feeling_shot = true
 func fight_against():
-	if enemy_plane_x > 2110:
-
-		apply_central_impulse(Vector2(-2,0))
-	if enemy_plane_x < 2120:
-		apply_central_force(Vector2(1,0))
-
+	if fuel > 0:
+	
+		print(fuel)
+		if enemy_plane_x > 2110:
+			apply_central_impulse(Vector2(-2,0))
+			fuel -=5
+			print("pushing")
+		if enemy_plane_x < 2120:
+			apply_central_force(Vector2(10,0))
+			fuel -=10
+			print("too far")
 
 func reload():
 	if reloading == true:
