@@ -1,10 +1,10 @@
 extends RigidBody2D
-@export var bullet_projectile: PackedScene = preload("res://bullet.tscn")
+@export var enemy_bullet_projectile: PackedScene = preload("res://enemy_bullet.tscn")
 #@export var fromMi = false
 #@export var fromEneMi = false
 func _ready() -> void:
 
-	apply_central_impulse(Vector2(1000,randi_range(-15,15)))
+	apply_central_impulse(Vector2(-940,randi_range(-15,15)))
 	await get_tree().create_timer(5.0).timeout
 	queue_free()
 

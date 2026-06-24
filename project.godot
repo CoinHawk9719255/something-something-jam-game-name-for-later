@@ -78,7 +78,8 @@ kamikaze={
 
 [layer_names]
 
-2d_physics/layer_6="bullet layer"
+2d_physics/layer_6="bullet layer player"
+2d_physics/layer_7="bullet layer enemy"
 
 [physics]
 

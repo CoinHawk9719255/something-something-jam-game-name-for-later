@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cqu0d3ctxrm7g"]
+
+[ext_resource type="Script" uid="uid://bjm813owvidj6" path="res://enemy_bullet_projectile.gd" id="1_gl7bs"]
+[ext_resource type="Texture2D" uid="uid://bagpmax8lqccd" path="res://enenehuf buleltfrsd.png" id="2_mgp66"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7smgm"]
+radius = 4.0
+height = 16.0
+
+[node name="enemy_bullet" type="Node2D" unique_id=1910994291]
+
+[node name="enemy_bullet_projectile" type="RigidBody2D" parent="." unique_id=1220784970]
+collision_layer = 64
+collision_mask = 64
+mass = 0.02
+gravity_scale = 0.0
+script = ExtResource("1_gl7bs")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy_bullet_projectile" unique_id=1406247086]
+texture = ExtResource("2_mgp66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_bullet_projectile" unique_id=1837605040]
+position = Vector2(0, 0.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7smgm")
