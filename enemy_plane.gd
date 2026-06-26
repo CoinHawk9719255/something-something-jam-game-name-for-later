@@ -27,7 +27,7 @@ extends RigidBody2D
 @onready var timeDelata = 0.0
 
 func _ready() -> void:
-	print(str(global_position))
+
 	$move_cooldown.start()
 	#await get_trwee().create_timer(0.15).timeout
 	random_speed = randi_range(-600, 600)

@@ -12,7 +12,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-
 	if Input.is_key_pressed(KEY_BRACKETLEFT):
 		change_window_size(1600,900)
 		pass

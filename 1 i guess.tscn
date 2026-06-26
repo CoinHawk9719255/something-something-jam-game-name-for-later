@@ -27,17 +27,13 @@ texture = ExtResource("1_gm6nr")
 
 [node name="plane" parent="." unique_id=1544273406 instance=ExtResource("1_w6gwg")]
 unique_name_in_owner = true
-<<<<<<< Updated upstream
 position = Vector2(352, 913)
-=======
-position = Vector2(229, 494)
->>>>>>> Stashed changes
 
 [node name="lowerboundcollisionwall" parent="." unique_id=1284379641 instance=ExtResource("3_x3p6a")]
-position = Vector2(59, -506)
+position = Vector2(157, -382)
 
 [node name="upperboundcollisionwall" parent="." unique_id=1523383145 instance=ExtResource("4_lnvjd")]
-position = Vector2(1372, -7)
+position = Vector2(1360, -75)
 
 [node name="rightboundcollisionwall" parent="." unique_id=1074938235 instance=ExtResource("5_j0uqt")]
 position = Vector2(-599, -163)
