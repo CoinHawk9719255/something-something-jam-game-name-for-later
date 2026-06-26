@@ -27,7 +27,7 @@ texture = ExtResource("1_gm6nr")
 
 [node name="plane" parent="." unique_id=1544273406 instance=ExtResource("1_w6gwg")]
 unique_name_in_owner = true
-position = Vector2(493, 772)
+position = Vector2(352, 913)
 
 [node name="lowerboundcollisionwall" parent="." unique_id=1284379641 instance=ExtResource("3_x3p6a")]
 position = Vector2(157, -382)

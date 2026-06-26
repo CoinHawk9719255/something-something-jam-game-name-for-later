@@ -7,6 +7,6 @@
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1342234145]
 
 [node name="FightClub1458463291" type="Sprite2D" parent="." unique_id=88191827]
-position = Vector2(1273, 801.5)
-scale = Vector2(1.7888889, 2.164)
+position = Vector2(992.2501, 541.87506)
+scale = Vector2(1.3885417, 1.4696666)
 texture = ExtResource("1_y341g")
