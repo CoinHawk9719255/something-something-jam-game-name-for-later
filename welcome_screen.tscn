@@ -1,12 +1,5 @@
 [gd_scene format=3 uid="uid://c7m122kxxkcrj"]
 
-[ext_resource type="Texture2D" uid="uid://chyr770s3fcr" path="res://fight-club-1458463291.jpeg" id="1_y341g"]
-
 [node name="welcome screen" type="Node2D" unique_id=1133030861]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1342234145]
-
-[node name="FightClub1458463291" type="Sprite2D" parent="." unique_id=88191827]
-position = Vector2(992.2501, 541.87506)
-scale = Vector2(1.3885417, 1.4696666)
-texture = ExtResource("1_y341g")

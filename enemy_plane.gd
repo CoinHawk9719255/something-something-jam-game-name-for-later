@@ -11,7 +11,6 @@ extends RigidBody2D
 @onready var fire_rate = 0.03
 @onready var enemy_plane_y = 0
 @onready var enemy_plane_x = 0
-@onready var mrrightbound = get_node("res://")
 @onready var plane = get_node("../../plane/plane")
 @onready var player_plane_x = plane.player_plane_x
 @onready var player_plane_y = plane.player_plane_y
