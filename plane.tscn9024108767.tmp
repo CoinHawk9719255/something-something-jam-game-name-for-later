@@ -32,6 +32,10 @@ contact_monitor = true
 max_contacts_reported = 4
 constant_force = Vector2(0, 9.8)
 script = ExtResource("2_1xtw7")
+ammo = null
+kamikazing = null
+player_plane_y = null
+player_plane_x = null
 
 [node name="Sprite2D" type="Sprite2D" parent="plane" unique_id=497130503]
 texture = ExtResource("2_r8n13")

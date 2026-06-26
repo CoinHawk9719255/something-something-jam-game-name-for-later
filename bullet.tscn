@@ -12,7 +12,7 @@ height = 16.0
 [node name="bullet_projectile" type="RigidBody2D" parent="." unique_id=1886794811]
 collision_layer = 16
 collision_mask = 32
-mass = 5.0
+mass = 66.645
 gravity_scale = 0.0
 script = ExtResource("1_v8qja")
 

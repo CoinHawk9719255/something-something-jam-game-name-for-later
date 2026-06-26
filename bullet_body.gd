@@ -1,13 +1,14 @@
 extends RigidBody2D
 @export var bullet_projectile: PackedScene = preload("res://bullet.tscn")
-#@export var fromMi = false
-#@export var fromEneMi = false
-func _ready() -> void:
+@export var speed: float = 940
 
-	apply_central_impulse(Vector2(1000,randi_range(-15,15)))
+
+func _ready() -> void:
+	#var forward = Vector2.RIGHT.rotated(rotation)
+	#var spread = Vector2.UP.rotated(rotation) * randi_range(-15, 15)
+	#apply_central_impulse(forward * speed + spread)
 	await get_tree().create_timer(5.0).timeout
 	queue_free()
-
 
 
 func _process(_delta: float) -> void:

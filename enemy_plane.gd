@@ -21,17 +21,25 @@ extends RigidBody2D
 @onready var timeSinceLastMove2 = 0
 @onready var kamikaze_dodger_speed = 0
 @onready var fuel = 10000
+@export var cutscenestart = false
+@onready var pending_rotation = 0
+@onready var timeDelata = 0.0
 
 func _ready() -> void:
+
 	$move_cooldown.start()
 	#await get_trwee().create_timer(0.15).timeout
 	random_speed = randi_range(-600, 600)
 	apply_central_impulse(Vector2(0, random_speed)*3)
 
+func check_for_cutscene():
+	if cutscenestart == true:
+		pass
 
 func _process(delta: float) -> void:
-
-	
+	timeDelata += delta
+	if enemy_plane_x >= 2300:
+		cutscenestart = true
 	dodgeKamikaze()
 	reload()
 	time_since_shot += delta
@@ -40,6 +48,7 @@ func _process(delta: float) -> void:
 	player_plane_y = plane.player_plane_y
 	time_since_last_move += delta
 	timeSinceLastMove2 += delta
+	
 	fight_against()
 	track_player_y()
 	calculateUpDown()
@@ -51,8 +60,19 @@ func _process(delta: float) -> void:
 func process(_delta: float) -> void:
 	await get_tree().create_timer(0.25).timeout
 	kamikaze_dodger_speed = randi_range(-600, 600)
-	print("kamikaze dodger speed" + str(kamikaze_dodger_speed))
+	
 
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if pending_rotation != 0.0:
+		state.transform = state.transform.rotated_local(pending_rotation)
+		pending_rotation = 0.0
+	if pending_rotation == 0 && timeDelata > 2 :
+		var howMuchIHaveToRotate = 0
+		if global_rotation_degrees != 0.0:
+			timeDelata = 0
+			howMuchIHaveToRotate = abs(360 - global_rotation_degrees)
+			rotate(deg_to_rad(howMuchIHaveToRotate))
+ 
 func can_see_target() -> bool:
 	target = get_tree().get_first_node_in_group("player planes")
 	if not target:
@@ -97,7 +117,7 @@ func track_player_y() -> void:
 		var y_diff = player_plane_y - enemy_plane_y
 		var distance = abs(y_diff)
 
-		if distance > 2: 
+		if distance > 3: 
 			var direction = sign(y_diff)
 			var force_strength = clamp(distance * 2.5, 50, 500)
 			apply_central_force(Vector2(0, direction * force_strength))
@@ -109,20 +129,20 @@ func calculateUpDown():
 	if time_since_last_move >= moveThingyMagigy:
 		time_since_last_move = 0
 		if player_plane_y < enemy_plane_y:
-			random_speed = randi_range(-200, -500)	
+			random_speed = randi_range(-200, -200)	
 		elif player_plane_y > enemy_plane_y:
-			random_speed = randi_range(200, 500)
+			random_speed = randi_range(200, 200)
 		else:
-			random_speed = randi_range(-300, 300)
+			random_speed = randi_range(-350, 350)
 		apply_central_impulse(Vector2(0, random_speed)*3)
 		
 	
 	if feeling_shot == true:
 		feeling_shot = false
 		var forwardBackwards = 0
-		if enemy_plane_x < 2300:
-			forwardBackwards = randi_range(-150,150)
-		print("moving also feeling shot is "+ str(feeling_shot))
+		#if enemy_plane_x < 2300:
+		forwardBackwards = randi_range(-150,150)
+		
 		apply_central_impulse(Vector2(forwardBackwards,randi_range(-300,300)))
 
 
@@ -139,14 +159,17 @@ func shoot_bullet():
 			reloading = true
 
 func createBullet():
-	
-	var newBullet = projectile.instantiate()  
+	var newBullet = projectile.instantiate() as Node2D
 	get_tree().current_scene.add_child(newBullet)
-	newBullet.global_position = global_position  
+	newBullet.global_position = global_position
+	newBullet.rotation = rotation
+	var bullet_body = newBullet.get_node("enemy_bullet_projectile") as RigidBody2D
+	bullet_body.linear_velocity = Vector2.LEFT.rotated(rotation) * 900
+
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "plane":
+	if body.name == "plane" && plane.kamikazing == true:
 		hitByKamikaze = true
 	if body.name == "right_bound":
 		if hitByKamikaze == true:
@@ -155,14 +178,17 @@ func _on_body_entered(body: Node2D) -> void:
 			get_tree().change_scene_to_file("res://win.tscn")
 	if body.name == "bullet_projectile":
 		feeling_shot = true
+		pending_rotation += deg_to_rad(45)
 func fight_against():
-	if enemy_plane_x > 2119:
-		apply_central_impulse(Vector2(-3,0))
-		fuel -= 1
+	if fuel > 0:
+		if enemy_plane_x > 2100:
+			apply_central_impulse(Vector2(-3.5,0))
+			fuel -= 10
 	if enemy_plane_x < 2120:
-		apply_central_force(Vector2(10,0))
-		
+		apply_central_force(Vector2(20,0))
 
+	if fuel <= 0:
+		apply_central_impulse(Vector2(0.01,0))
 func reload():
 	if reloading == true:
 		reloading = false
@@ -171,7 +197,11 @@ func reload():
 
 
 func _on_move_cooldown_timeout() -> void:
-	print("timer over!")
+
 	moveThingyMagigy = randi_range(1,5)
-	print("move thingy magigy"+str(moveThingyMagigy))
+	
 	$move_cooldown.start()
+
+
+	
+	

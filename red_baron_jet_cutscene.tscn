@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://yeydfgwgrcmp"]
+
+[ext_resource type="FontFile" uid="uid://b2qkup31wes5t" path="res://Qindret-OGxxP.otf" id="1_ns3yq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wgbtt"]
+font = ExtResource("1_ns3yq")
+font_size = 100
+
+[node name="Node2D" type="Node2D" unique_id=1507721891]
+
+[node name="Control" type="Control" parent="." unique_id=1872405260]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2566.0
+offset_bottom = 1600.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1530896672]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.032
+anchor_right = 63.411003
+anchor_bottom = 35.381
+offset_left = -43.622
+offset_top = -51.2
+offset_right = -2496.4402
+offset_bottom = -491.24
+text = "defrgthyuji"
+label_settings = SubResource("LabelSettings_wgbtt")
