@@ -116,14 +116,14 @@ func barrel_roll():
 			rotate(deg_to_rad(randi_range(1,25)))
 			roll = false
 			#apply_central_impulse(Vector2(0, 200))
-			#$roll_cooldown.start()
+			$roll_cooldown.start()
 			#await get_tree().create_timer(1.25).timeout
 			#apply_central_impulse(Vector2(0, -300))
 		elif Input.is_key_pressed(KEY_E):
 			rotate(deg_to_rad(randi_range(-1,-25)))
 			roll = false
 			#apply_central_impulse(Vector2(0, -200))
-			#$roll_cooldown.start()
+			$roll_cooldown.start()
 			#await get_tree().create_timer(1.25).timeout
 			#apply_central_impulse(Vector2(0, 280))
 		else:
