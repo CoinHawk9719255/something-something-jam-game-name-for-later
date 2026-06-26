@@ -21,28 +21,25 @@ font_size = 82
 script = ExtResource("1_d2v8w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1971584373]
-position = Vector2(992.5, 542.25)
-scale = Vector2(1.1417911, 1.2345332)
+position = Vector2(1278, 800.25)
+scale = Vector2(1.4695752, 1.8149606)
 texture = ExtResource("1_gm6nr")
 
 [node name="plane" parent="." unique_id=1544273406 instance=ExtResource("1_w6gwg")]
 unique_name_in_owner = true
-position = Vector2(493, 772)
+position = Vector2(631, 725)
 
 [node name="lowerboundcollisionwall" parent="." unique_id=1284379641 instance=ExtResource("3_x3p6a")]
-position = Vector2(157, -382)
 
 [node name="upperboundcollisionwall" parent="." unique_id=1523383145 instance=ExtResource("4_lnvjd")]
-position = Vector2(1360, -75)
 
 [node name="rightboundcollisionwall" parent="." unique_id=1074938235 instance=ExtResource("5_j0uqt")]
-position = Vector2(-599, -163)
 
 [node name="enemy plane" parent="." unique_id=32849966 instance=ExtResource("6_7534a")]
-position = Vector2(1548, 348)
+position = Vector2(2115, 345)
 
 [node name="leftboundcollsionwall" parent="." unique_id=1954119646 instance=ExtResource("7_yrdq3")]
-position = Vector2(23, 186)
+position = Vector2(-3, 681)
 
 [node name="Control" type="Control" parent="." unique_id=2121658315]
 layout_mode = 3
@@ -60,6 +57,3 @@ script = ExtResource("8_iga31")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=134497207]
 script = ExtResource("11_d2v8w")
-
-[node name="SubViewport" type="SubViewport" parent="." unique_id=1303873630]
-size = Vector2i(1600, 900)

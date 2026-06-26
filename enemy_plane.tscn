@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 [node name="enemy_plane" type="RigidBody2D" parent="." unique_id=1225063714]
 collision_layer = 49
 collision_mask = 33
+mass = 60.757
 physics_material_override = SubResource("PhysicsMaterial_bj0im")
 gravity_scale = 0.0
 inertia = 5.0

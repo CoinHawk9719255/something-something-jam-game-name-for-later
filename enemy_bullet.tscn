@@ -12,7 +12,7 @@ height = 16.0
 [node name="enemy_bullet_projectile" type="RigidBody2D" parent="." unique_id=1220784970]
 collision_layer = 64
 collision_mask = 64
-mass = 0.02
+mass = 0.109
 gravity_scale = 0.0
 script = ExtResource("1_gl7bs")
 
