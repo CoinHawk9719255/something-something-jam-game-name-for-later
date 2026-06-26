@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1w78jkc8f6wv" path="res://plane.png" id="2_r8n13"]
 [ext_resource type="AudioStream" uid="uid://di3k7fe5a4tj3" path="res://banzai.mp3" id="3_6xwvw"]
 [ext_resource type="Script" uid="uid://csiaj62cjgyr3" path="res://audio_stream_player.gd" id="3_nqs3l"]
-[ext_resource type="Script" path="res://kamikaze tip.gd" id="5_28khi"]
+[ext_resource type="Script" uid="uid://dkunw4tujqj6p" path="res://kamikaze tip.gd" id="5_28khi"]
 [ext_resource type="FontFile" uid="uid://b2qkup31wes5t" path="res://Qindret-OGxxP.otf" id="5_i1mur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3gu4"]
