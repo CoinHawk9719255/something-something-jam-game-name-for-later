@@ -7,9 +7,9 @@ extends RigidBody2D
 @onready var speed = 10.0
 @onready var roll = false
 @onready var time_since_shot = fire_rate
-@export var ammo = 400
+@export var ammo = 4
 @onready var wepFuel = 300
-@onready var can_kamikaze = false
+@export var can_kamikaze = false
 @onready var canControl_plane = true
 @export var kamikazing = false
 @export var player_plane_y = 0
@@ -113,18 +113,22 @@ func _on_body_entered(body: Node2D) -> void:
 func barrel_roll():
 	if roll == true:
 		if Input.is_key_pressed(KEY_Q):
-			roll = false
-			apply_central_impulse(Vector2(0, 200))
-			$roll_cooldown.start()
-			await get_tree().create_timer(1.25).timeout
-			apply_central_impulse(Vector2(0, -300))
-		elif Input.is_key_pressed(KEY_E):
-			roll = false
-			apply_central_impulse(Vector2(0, -200))
-			$roll_cooldown.start()
-			await get_tree().create_timer(1.25).timeout
-			apply_central_impulse(Vector2(0, 280))
+			rotate(deg_to_rad(randi_range(1,25)))
 
+			#roll = false
+			#apply_central_impulse(Vector2(0, 200))
+			#$roll_cooldown.start()
+			#await get_tree().create_timer(1.25).timeout
+			#apply_central_impulse(Vector2(0, -300))
+		elif Input.is_key_pressed(KEY_E):
+			rotate(deg_to_rad(randi_range(-1,-25)))
+			#roll = false
+			#apply_central_impulse(Vector2(0, -200))
+			#$roll_cooldown.start()
+			#await get_tree().create_timer(1.25).timeout
+			#apply_central_impulse(Vector2(0, 280))
+		else:
+			pass
 func _on_roll_cooldown_timeout() -> void:
 	roll = true
 

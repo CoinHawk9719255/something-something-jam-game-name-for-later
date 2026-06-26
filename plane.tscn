@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b1w78jkc8f6wv" path="res://plane.png" id="2_r8n13"]
 [ext_resource type="AudioStream" uid="uid://di3k7fe5a4tj3" path="res://banzai.mp3" id="3_6xwvw"]
 [ext_resource type="Script" uid="uid://csiaj62cjgyr3" path="res://audio_stream_player.gd" id="3_nqs3l"]
+[ext_resource type="Script" uid="uid://dkunw4tujqj6p" path="res://kamikaze tip.gd" id="5_28khi"]
+[ext_resource type="FontFile" uid="uid://b2qkup31wes5t" path="res://Qindret-OGxxP.otf" id="5_i1mur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3gu4"]
 size = Vector2(128, 128)
@@ -20,6 +22,17 @@ script/source = "extends Timer
 func _process(delta: float) -> void:
 	pass
 "
+
+[sub_resource type="LabelSettings" id="LabelSettings_cejrt"]
+font = ExtResource("5_i1mur")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+shadow_size = 40
+shadow_color = Color(0, 0, 0, 1)
+stacked_outline_count = 1
+stacked_outline_0/size = 6
+stacked_outline_0/color = Color(0.80200815, 0.41299552, 0, 1)
 
 [node name="plane" type="Node2D" unique_id=1544273406]
 
@@ -49,5 +62,20 @@ script = SubResource("GDScript_dpar4")
 stream = ExtResource("3_6xwvw")
 volume_db = 13.065
 script = ExtResource("3_nqs3l")
+
+[node name="Label" type="Label" parent="plane" unique_id=822444054]
+anchors_preset = -1
+anchor_left = 1.725
+anchor_top = 5.6000004
+anchor_right = 1.725
+anchor_bottom = 5.6000004
+offset_left = 69.0
+offset_top = 224.0
+offset_right = 1453.0
+offset_bottom = 595.0
+text = "You Are Never Truly Out of Ammo
+Press 'O' to Become the Ammo"
+label_settings = SubResource("LabelSettings_cejrt")
+script = ExtResource("5_28khi")
 
 [connection signal="timeout" from="plane/roll_cooldown" to="plane" method="_on_roll_cooldown_timeout"]
