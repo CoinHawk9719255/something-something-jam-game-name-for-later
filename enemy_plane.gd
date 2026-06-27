@@ -171,6 +171,8 @@ func createBullet():
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "plane" && plane.kamikazing == true:
 		hitByKamikaze = true
+	if body.name == "left_bound":
+		get_tree().change_scene_to_file("res://win.tscn")
 	if body.name == "right_bound":
 		if hitByKamikaze == true:
 			get_tree().change_scene_to_file("res://kamikaze_win.tscn")
