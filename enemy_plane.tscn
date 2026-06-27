@@ -7,7 +7,7 @@
 friction = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8yku"]
-size = Vector2(131, 128)
+size = Vector2(94, 96)
 
 [sub_resource type="GDScript" id="GDScript_oqhij"]
 script/source = "extends Timer
@@ -39,7 +39,7 @@ script = ExtResource("1_bj0im")
 texture = ExtResource("2_bj0im")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_plane" unique_id=1573437252]
-position = Vector2(1.5, 0)
+position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_b8yku")
 
 [node name="move_cooldown" type="Timer" parent="enemy_plane" unique_id=333737553]

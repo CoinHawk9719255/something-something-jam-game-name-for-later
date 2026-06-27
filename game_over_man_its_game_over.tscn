@@ -1,9 +1,41 @@
 [gd_scene format=3 uid="uid://djjg6ofl3mejo"]
 
 [ext_resource type="Texture2D" uid="uid://bqgpb3v1a4hot" path="res://dafrtedsa.png" id="1_rgh56"]
+[ext_resource type="Texture2D" uid="uid://ulwalv7gkjib" path="res://icon.svg" id="2_58otw"]
+[ext_resource type="Script" uid="uid://c0l8gu4853ntn" path="res://try again.gd" id="3_g6mua"]
+[ext_resource type="FontFile" uid="uid://b2qkup31wes5t" path="res://Qindret-OGxxP.otf" id="4_ebbo7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fwg0"]
+font = ExtResource("4_ebbo7")
+font_size = 64
 
 [node name="game_over_man_ITS_GAME_OVER" type="Node2D" unique_id=838419312]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=812477480]
 position = Vector2(1280, 800)
 texture = ExtResource("1_rgh56")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=569815622]
+position = Vector2(1302, 312)
+texture = ExtResource("2_58otw")
+
+[node name="Button" type="Button" parent="Sprite2D2" unique_id=627419787]
+anchors_preset = -1
+anchor_left = -0.5546875
+anchor_top = -0.5546875
+anchor_right = 1.3690001
+anchor_bottom = 1.3050001
+offset_right = -106.23201
+offset_bottom = -95.04001
+script = ExtResource("3_g6mua")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Sprite2D2" unique_id=1279678458]
+offset_left = 33.0
+offset_top = 106.0
+offset_right = 563.0
+offset_bottom = 224.0
+text = "Click me to try again!"
+label_settings = SubResource("LabelSettings_3fwg0")
+
+[connection signal="pressed" from="Sprite2D2/Button" to="Sprite2D2/Button" method="_on_pressed"]

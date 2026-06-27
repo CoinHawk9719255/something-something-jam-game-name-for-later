@@ -1,5 +1,52 @@
 [gd_scene format=3 uid="uid://c7m122kxxkcrj"]
 
+[ext_resource type="Texture2D" uid="uid://c7spawdqmdpvk" path="res://black dot.png" id="1_y341g"]
+[ext_resource type="Texture2D" uid="uid://ulwalv7gkjib" path="res://icon.svg" id="2_rtnd7"]
+[ext_resource type="Script" uid="uid://8v44583vxvuq" path="res://sprite_2d_2.gd" id="3_y6k4n"]
+[ext_resource type="FontFile" uid="uid://cxhjxej6yo0ro" path="res://SeriousMan-zgDG.ttf" id="4_p74hq"]
+[ext_resource type="Script" uid="uid://s1h0et8fvsd4" path="res://context.gd" id="4_y6k4n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p74hq"]
+font = ExtResource("4_p74hq")
+font_size = 100
+
 [node name="welcome screen" type="Node2D" unique_id=1133030861]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1342234145]
+position = Vector2(1278.25, 799.75)
+scale = Vector2(2557.5, 1600.5)
+texture = ExtResource("1_y341g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1706604391]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=633589966]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HBoxContainer" unique_id=374600816]
+position = Vector2(252, 188)
+texture = ExtResource("2_rtnd7")
+script = ExtResource("3_y6k4n")
+
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer/Sprite2D2" unique_id=1256456738]
+anchors_preset = -1
+anchor_right = 0.34600002
+anchor_bottom = 0.59400004
+offset_left = -85.0
+offset_top = -81.0
+offset_right = 39.711998
+offset_bottom = 7.405998
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Sprite2D2" unique_id=74025712]
+offset_left = -139.0
+offset_top = 69.0
+offset_right = 157.0
+offset_bottom = 157.0
+text = "Click Me Until The Game Starts!"
+label_settings = SubResource("LabelSettings_p74hq")
+script = ExtResource("4_y6k4n")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Sprite2D2/Button" to="CanvasLayer/HBoxContainer/Sprite2D2/Label" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Sprite2D2/Button" to="CanvasLayer/HBoxContainer/Sprite2D2" method="_on_button_pressed"]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://v17pwr3x77pq"]
 
 [ext_resource type="Script" uid="uid://dqt8w5im7ulrh" path="res://spin_scene.gd" id="1_eo1do"]
-[ext_resource type="Texture2D" uid="uid://1moy2ulhw7hx" path="res://Screenshot 2024-05-16 180024.png" id="1_gm6nr"]
 [ext_resource type="PackedScene" uid="uid://dalecf1u7rojf" path="res://plane.tscn" id="1_w6gwg"]
+[ext_resource type="Texture2D" uid="uid://byrop1ey2jemu" path="res://sky.jpg" id="2_d2v8w"]
 [ext_resource type="PackedScene" uid="uid://brm68ft5r1c6l" path="res://lowerboundcollisionwall.tscn" id="3_x3p6a"]
 [ext_resource type="PackedScene" uid="uid://dyi6n3iuvt85o" path="res://upperboundcollisionwall.tscn" id="4_lnvjd"]
 [ext_resource type="PackedScene" uid="uid://dqfrykx6ls5x8" path="res://rightboundcollisionwall.tscn" id="5_j0uqt"]
@@ -23,7 +23,7 @@ script = ExtResource("1_eo1do")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1971584373]
 position = Vector2(1279.5001, 800.25)
 scale = Vector2(1.4712974, 1.8149606)
-texture = ExtResource("1_gm6nr")
+texture = ExtResource("2_d2v8w")
 
 [node name="plane" parent="." unique_id=1544273406 instance=ExtResource("1_w6gwg")]
 unique_name_in_owner = true
@@ -56,4 +56,5 @@ label_settings = SubResource("LabelSettings_rmy6j")
 script = ExtResource("8_iga31")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=134497207]
+volume_db = 1.0
 script = ExtResource("11_d2v8w")
